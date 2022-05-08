@@ -1,0 +1,53 @@
+{
+  "name": "reactives",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --color --ext .html,.js,.json,.jsx,.md,.ts,.tsx *.* src",
+    "lint:fix": "npm run eslint -- --fix",
+    "types": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlehmann/reactives.git"
+  },
+  "author": "Hugo Lehmann <hugo.lehmanndussout@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hlehmann/reactives/issues"
+  },
+  "homepage": "https://github.com/hlehmann/reactives#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint-config-adjunct": "^4.11.1",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-auto": "^0.7.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-array-func": "^3.1.7",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-no-constructor-bind": "^2.0.4",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-no-unsanitized": "^4.0.1",
+    "eslint-plugin-no-use-extend-native": "^0.5.0",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-scanjs-rules": "^0.2.1",
+    "eslint-plugin-security": "^1.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-sonarjs": "^0.13.0",
+    "eslint-plugin-switch-case": "^1.1.2",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  }
+}
