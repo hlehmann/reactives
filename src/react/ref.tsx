@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo } from "react";
 
-import { RefsStore } from "../ref";
+import { RefsStore } from "../core/ref";
 
 const RefsContext = createContext<RefsStore | undefined>(undefined);
 

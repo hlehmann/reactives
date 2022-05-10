@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 
-import { createRef } from "../../ref";
-import { getSource } from "../../source";
+import { createRef } from "../../core/ref";
+import { getSource } from "../../core/source";
 import { RefsStoreProvider } from "../ref";
 import { useReactiveState, useWatcher } from "../watcher";
 

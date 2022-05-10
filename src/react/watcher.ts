@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 
-import { ReactiveRaw } from "../raw";
-import { ReactiveRef } from "../ref";
-import { getSource, ReactiveSourceUtils } from "../source";
-import { createWatcher, Watcher } from "../watcher";
+import { ReactiveRaw } from "../core/raw";
+import { ReactiveRef } from "../core/ref";
+import { getSource, ReactiveSourceUtils } from "../core/source";
+import { createWatcher, Watcher } from "../core/watcher";
 import { useRefsStore } from "./ref";
 
 export function useWatcher<S extends ReactiveSourceUtils>(

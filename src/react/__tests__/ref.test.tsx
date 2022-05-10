@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 
-import { RefsStore } from "../../ref";
+import { RefsStore } from "../../core/ref";
 import { RefsStoreProvider, useRefsStore } from "../ref";
 
 describe("RefsStoreProvider", () => {
