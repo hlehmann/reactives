@@ -69,7 +69,7 @@ function createReactiveSource<R extends ReactiveRaw>(
       const oldValue = raw[key as keyof R];
       if (oldValue === value) return true;
 
-      Object.assign(raw, { [key]: value as R[keyof R] });
+      raw[key as keyof R] = value as R[keyof R];
       trigger(key as keyof R);
       return true;
     },
