@@ -8,6 +8,7 @@ on:
 
 jobs:
   checks:
+    name: Lint + Types + Tests
     runs-on: ubuntu-latest
 
     steps:
