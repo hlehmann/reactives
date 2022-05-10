@@ -1,10 +1,15 @@
 {
-  "extends": ["auto", "plugin:prettier/recommended"],
+  "extends": [
+    "auto",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "import/prefer-default-export": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "react/require-default-props": "off"
   },
   "ignorePatterns": ["dist/**"]
 }
