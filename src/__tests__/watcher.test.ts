@@ -1,3 +1,4 @@
+import { createRef, RefsStore } from "../ref";
 import { getSource, REACTIVE_RAW_KEY, REACTIVE_WATCH_KEY } from "../source";
 import { createWatcher, REACTIVE_SOURCE_KEY } from "../watcher";
 
@@ -74,5 +75,18 @@ describe("Watcher", () => {
     expect(listener).toHaveBeenCalledTimes(0);
     source.child.age = 5;
     expect(listener).toHaveBeenCalledTimes(0);
+  });
+
+  it("should access refs", () => {
+    const source = getSource({ name: "John" });
+    const ref = createRef(() => source);
+    const refStore = new RefsStore();
+    const listener = jest.fn();
+    expect(() => createWatcher(ref, listener)).toThrow();
+    const watcher = createWatcher(ref, listener, refStore);
+    expect(watcher.name).toBe("John");
+    source.name = "Jane";
+    expect(listener).toHaveBeenCalledTimes(1);
+    expect(watcher.name).toBe("Jane");
   });
 });

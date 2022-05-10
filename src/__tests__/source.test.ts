@@ -38,6 +38,7 @@ describe("Source", () => {
     const listener = jest.fn();
     source[REACTIVE_WATCH_KEY]("name", listener);
     source.name = "John";
+    source.age = 10;
     expect(listener).toHaveBeenCalledTimes(0);
   });
 

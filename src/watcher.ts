@@ -1,3 +1,4 @@
+import { ensureRefStore, isRef, ReactiveRef, RefsStore } from "./ref";
 import {
   isSource,
   REACTIVE_RAW_KEY,
@@ -18,26 +19,29 @@ interface WatcherUtils<S> {
 }
 
 export function createWatcher<S extends ReactiveSourceUtils>(
-  source: S,
-  invalidate: () => void
+  source: S | ReactiveRef<S>,
+  invalidate: () => void,
+  refStore?: RefsStore
 ): Watcher<S> {
-  const deepSource = source;
+  const realSource = isRef(source)
+    ? ensureRefStore(refStore).get(source)
+    : source;
 
   function returnChild(key: keyof S) {
-    const child = source[key];
-    source[REACTIVE_WATCH_KEY](key as string, invalidate);
+    const child = realSource[key];
+    realSource[REACTIVE_WATCH_KEY](key as string, invalidate);
     return isSource(child) ? createWatcher(child, invalidate) : child;
   }
 
-  return new Proxy<Watcher<S>>(deepSource as never, {
+  return new Proxy<Watcher<S>>(realSource as never, {
     get(_, key) {
       switch (key) {
         case REACTIVE_SOURCE_KEY:
-          return source;
+          return realSource;
 
         case REACTIVE_RAW_KEY:
         case REACTIVE_WATCH_KEY:
-          return source[key];
+          return realSource[key];
 
         default:
           return returnChild(key as keyof S);
