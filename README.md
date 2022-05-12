@@ -12,14 +12,14 @@
 
 const userSource = getSource({
   name: "John",
-  child: { name: "Henry" },
+  parent: { name: "Henry" },
 });
 
 // watch sources
 
 runner((watch) => {
   const user = watch(userSource);
-  console.log(user.name);
+  document.getElementById("user-name").textContent = user.name;
 });
 
 const Component = () => {
@@ -35,6 +35,5 @@ user.$source.parent.name = "Tim";
 
 ## How it works
 
-It uses Proxy to detect read fields and updated fields.
-
-It uses WeakMap and WeakRef to make efficient subscriptions.
+- It uses Proxy to detect read fields and updated fields.
+- It uses WeakMap and WeakRef to make efficient subscriptions.
