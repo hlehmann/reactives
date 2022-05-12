@@ -1,12 +1,11 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-// eslint-disable-next-line unicorn/prefer-module
-module.exports = {
+const config = {
   preset: "ts-jest",
   testEnvironment: "jsdom",
+  roots: ["<rootDir>/src/"],
   globals: {
-    "ts-jest": {
-      isolatedModules: true,
-    },
+    "ts-jest": {},
   },
   setupFilesAfterEnv: ["./jest-setup.js"],
 };
+export default config;
