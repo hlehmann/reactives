@@ -1,5 +1,9 @@
 # Reactivity.js
 
+![GitHub branch checks state](https://img.shields.io/github/checks-status/hlehmann/reactivityjs/master)
+![Codecov](https://img.shields.io/codecov/c/github/hlehmann/reactivityjs)
+![GitHub](https://img.shields.io/github/license/hlehmann/reactivityjs)
+
 ## Concepts
 
 - Source: a "watchable" version of an object
