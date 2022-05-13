@@ -50,5 +50,8 @@ export function createWatcher<S extends ReactiveSourceUtils>(
     set() {
       return false;
     },
+    deleteProperty() {
+      return false;
+    },
   });
 }

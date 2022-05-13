@@ -16,11 +16,11 @@ describe("Watcher", () => {
     const source = getSource({ name: "John", child: { name: "Jane" } });
     const watcher = createWatcher(source, jest.fn());
     expect(() => {
-      // @ts-expect-error - we're testing the readonly behavior
+      // @ts-expect-error - we're testing a readonly behavior
       watcher.name = "Charles";
     }).toThrow();
     expect(() => {
-      // @ts-expect-error - we're testing the readonly behavior
+      // @ts-expect-error - we're testing a readonly behavior
       watcher.child.name = "Charles";
     }).toThrow();
   });

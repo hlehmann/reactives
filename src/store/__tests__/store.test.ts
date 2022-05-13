@@ -29,11 +29,11 @@ describe("Store", () => {
   it("should be readonly", () => {
     const store = initStore();
     expect(() => {
-      // @ts-expect-error - we're testing the readonly behavior
+      // @ts-expect-error - we're testing a readonly behavior
       store.name = "Charles";
     }).toThrow();
     expect(() => {
-      // @ts-expect-error - we're testing the readonly behavior
+      // @ts-expect-error - we're testing a readonly behavior
       store.child.name = "Charles";
     }).toThrow();
   });
