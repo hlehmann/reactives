@@ -21,7 +21,7 @@
     "url": "git+https://github.com/hlehmann/reactives.git"
   },
   "author": "Hugo Lehmann <hugo.lehmanndussout@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hlehmann/reactives/issues"
   },
