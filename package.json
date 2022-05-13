@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch --coverage",
     "lint": "eslint --color --ext .html,.js,.json,.jsx,.md,.ts,.tsx src",
     "lint:fix": "npm run eslint -- --fix",
     "types": "tsc --noEmit",
